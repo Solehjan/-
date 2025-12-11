@@ -21,3 +21,11 @@
          url("/static/fonts/Inter-Regular.woff2") format("woff");
     font-weight: 400;
 }
+
+
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/MyFont-Bold.ttf');
+    font-weight: 700;
+}
