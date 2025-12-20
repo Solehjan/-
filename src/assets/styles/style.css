@@ -178,3 +178,80 @@ body {
     /* Дополнительные стили для текста */
     padding: 20px;
 }
+
+
+
+/* ЛАБА 5. АДАПТИВНОСТЬ (Media Queries)  */
+
+/*1. Планшеты (меньше 768px) */
+@media (max-width: 768px) {
+    
+    /* 1.header Уменьшаем отступы */
+    .site-header {
+        height: auto; /* Высота теперь подстраивается под содержимое */
+        padding: 10px 20px;
+
+        body {
+        background-color: pink;
+    }
+    }
+
+    /* 2. Первый экран Hero: Выстраиваем в одну колонку */
+    .hero-section {
+        grid-template-columns: 1fr; /* Было 1fr 1fr, стала 1 колонка */
+        text-align: center; /* Центрируем текст */
+        min-height: auto; /* Убираем жесткую высоту */
+        padding-top: 100px; /* Отступ сверху, чтобы не наезжало на хедер */
+        gap: 20px;
+    }
+
+    /* Меняем порядок: Картинка сверху, текст снизу*/
+    .hero-image {
+        order: -1; /* Перемещает блок вверх */
+        margin-bottom: 20px;
+    }
+    
+    .hero-text h2 {
+        font-size: 32px; /* Уменьшаем шрифт заголовка */
+    }
+}
+
+/*Breakpoint 2. Мобильные телефоны (меньше 480px) */
+@media (max-width: 480px) {
+
+    /* 1. Header. Элементы друг под другом */
+    .site-header {
+        flex-direction: column; /* Вертикальное расположение */
+        align-items: center;
+    }
+    
+    /* Скрываем меню на совсем маленьких экранах (или делаем вертикальным) */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* 2. Футер: Текст поменьше */
+    .site-footer {
+        font-size: 12px;
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 3. Первый экран: Еще меньше шрифт */
+    .hero-text h2 {
+        font-size: 24px;
+    }
+    
+    .hero-text p {
+        font-size: 14px;
+    }
+    
+    .btn-submit {
+        width: 100%; /* Кнопка на всю ширину */
+    }
+}
