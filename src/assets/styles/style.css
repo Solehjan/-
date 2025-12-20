@@ -116,3 +116,65 @@ p {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1); /*добавил тень для красоты */
     margin-top: 20px;
 }
+
+
+
+
+
+/* Стили для ЛАБЫ 4: Закрепление Header/Footer */
+/*body высотой во весь экран и добавляем отступы */
+body {
+    min-height: 100vh;
+    margin: 0; 
+    padding-top: 60px; /* Отступ сверху (высота header) */
+    padding-bottom: 50px; /* Отступ снизу (высота footer) */
+}
+
+/*Закрепляем Шапку*/
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    z-index: 1000; 
+    height: 60px; 
+    
+    /* Стили Flexbox для десктопной версии */
+    display: flex;
+    justify-content: space-between; /* Элементы по краям */
+    align-items: center; 
+    padding: 0 20px;
+}
+
+/*Прижимаем Подвал*/
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    height: 50px; 
+    
+    /* Стили Flexbox для центрального выравнивания */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для первого экрана */
+.hero-section {
+    display: grid; /* Включаем режим Grid */
+    /* Создаем две колонки: одна занимает 1 часть, вторая 1 часть */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; /* Расстояние между колонками */
+    min-height: calc(100vh - 110px); /* Высота равна высоте экрана минус высота шапки и подвала */
+    align-items: center; /* Выравнивание по центру вертикально */
+    padding: 20px;
+}
+
+.hero-text {
+    /* Дополнительные стили для текста */
+    padding: 20px;
+}
