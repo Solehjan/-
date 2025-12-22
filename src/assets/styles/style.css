@@ -1,118 +1,229 @@
+@charset "UTF-8";
 @import "fonts.css";
-
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-
-.test {
-    color: yellow !important;
+/* ПЕРЕМЕННЫЕ SCSS (Часть Лабы 6 - используем возможности SCSS)      */
+/* ОБЩИЕ СТИЛИ (Лаба 1-3) */
+body {
+  min-height: 100vh;
+  margin: 0;
+  /* Отступы для фиксированных шапки и футера (Лаба 4) */
+  padding-top: 60px;
+  padding-bottom: 50px;
+  font-family: sans-serif;
+  color: #1F3F68;
 }
 
-.test {
-    color: red !important;
-}
-
-@import url('./fonts.css');
-
-
-/* Для всех параграфов (p)*/
 p {
-    font-size: 16px;
-    line-height: 26px;
-    color: #1F3F68;
+  font-size: 16px;
+  line-height: 26px;
+  color: #1F3F68;
 }
 
-/* Заголовок h1*/
-.title-main { 
-    font-size: 64px;
-    color: #1F3F68;
+h1, h2, h3 {
+  color: #1F3F68;
+  margin-top: 0;
 }
 
-/* Заголовок h2*/
-.contact-title { 
-    font-weight: 500;
-    font-size: 44px;
-    text-align: center;
+/* HEADER / ШАПКА (Лаба 4-закрепление, Лаба 6-SCSS вложенность)  */
+.site-header {
+  position: fixed; /* Лаба 4: Закрепление */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  /* Вложенность SCSS */
+  /* Лаба 5: Адаптивность шапки */
 }
-
-/* Заголовок h3*/ 
-.subtitle { 
-    font-size: 36px;
-    text-align: center;
+.site-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
 }
-
-/* Заголовки h4*/
-.small-title { 
-    font-size: 20px;
-    line-height: 30px;
-    color: #1F3F68;
+.site-header p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
 }
-
-/* Поля ввода*/
-.input-field { 
-    border: 1px solid #356EAD;
-    box-sizing: border-box;
-    border-radius: 10px;
-    opacity: 0.4;
-    display: block; /* Чтобы они были с новой строки */
-    margin-bottom: 20px; /* Отступ снизу */
-    width: 100%; /* Растянуть на всю ширину */
+.site-header img {
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 480px) {
+  .site-header {
+    flex-direction: column;
+    height: auto;
     padding: 10px;
+    /* Скрываем описание на телефоне */
+  }
+  .site-header h1 {
+    font-size: 18px;
+  }
+  .site-header p {
+    display: none;
+  }
 }
 
-/* Кнопка отправки */
-.btn-submit { 
-    background: #5A98D0;
-    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
+/* FOOTER / ПОДВАЛ (Лаба 4 - закрепление)  */
+.site-footer {
+  position: fixed; /* Лаба 4: Закрепление */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+.site-footer p {
+  color: #ffffff;
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+/* ПЕРВЫЙ ЭКРАН (Лаба 4-Grid, Лаба 5-Адаптив, Лаба 6-Анимация) */
+.promo-section {
+  position: relative;
+  overflow: hidden; /* Чтобы анимация не вылезала */
+  padding: 40px 20px;
+  min-height: calc(100vh - 110px);
+  /* Лаба 4: Grid сетка (2 колонки) */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  /* ЛАБА 6. АНИМАЦИЯ ФОНА (Начало) */
+  /*ЛАБА 6. АНИМАЦИЯ ФОНА (Конец) */
+  /* Контент внутри секции */
+  /* Картинка справа */
+  /* ЛАБА 5. АДАПТИВНОСТЬ ПЕРВОГО ЭКРАНА  */
+}
+.promo-section .animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* На задний план */
+  pointer-events: none;
+}
+.promo-section .animated-bg .floating-item {
+  position: absolute;
+  opacity: 0.4;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.promo-section .animated-bg .floating-item.item-1 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 10%;
+  animation: floatUp 5s infinite ease-in-out;
+}
+.promo-section .animated-bg .floating-item.item-2 {
+  width: 90px;
+  height: 90px;
+  top: 50%;
+  right: 15%;
+  animation: floatDown 7s infinite ease-in-out;
+}
+.promo-section .animated-bg .floating-item.item-3 {
+  width: 40px;
+  height: 40px;
+  bottom: 20%;
+  left: 30%;
+  animation: floatUp 4s infinite ease-in-out;
+}
+.promo-section h2, .promo-section p, .promo-section img:not(.floating-item) {
+  position: relative;
+  z-index: 2;
+}
+.promo-section img:not(.floating-item) {
+  max-width: 100%;
+  border-radius: 10px;
+  justify-self: center;
+}
+@media (max-width: 768px) {
+  .promo-section {
+    grid-template-columns: 1fr; /* Одна колонка на планшетах */
     text-align: center;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    border: none; /* Убираем стандартную рамку */
-    padding: 15px 40px; /* Чтобы кнопка была большой */
-    cursor: pointer;
+    gap: 20px;
+    /* Меняем порядок: картинка сверху */
+  }
+  .promo-section img:not(.floating-item) {
+    order: -1;
+    width: 200px;
+  }
 }
 
-/* Стили для хлебных крошек */
-.breadcrumbs {
-    list-style: none; /* Убираем точки списка */
-    display: flex;    /* Выстраиваем в одну строку */
-    padding: 0;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #1F3F68;
+/* ОСТАЛЬНЫЕ БЛОКИ (Лаба 3  Семантика) */
+.news-article, .sidebar-info, .feedback-form-section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+.news-article h2, .news-article h3, .sidebar-info h2, .sidebar-info h3, .feedback-form-section h2, .feedback-form-section h3 {
+  text-align: center;
 }
 
-.breadcrumbs li {
-    margin-right: 5px;
+/* Форма */
+.feedback-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.feedback-form-section form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.feedback-form-section form button {
+  background-color: #5A98D0;
+  color: #ffffff;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.feedback-form-section form button:hover {
+  opacity: 0.9;
 }
 
-/* Добавляем "/" после каждого элемента, кроме последнего */
-.breadcrumbs li:not(:last-child)::after {
-    content: "/";
-    margin-left: 5px;
-    color: #ccc;
+/* KEYFRAMES / АНИМАЦИЯ Лаба 6  */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
-
-.breadcrumbs a {
-    text-decoration: none;
-    color: #1F3F68;
-    font-weight: bold;
-}
-
-/* Фон для формы */
-.form-wrapper {
-    background-image: url('../img/images\ \(1\).jpg'); 
-    
-    background-size: cover;  /* Чтобы картинка покрывала весь блок */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    padding: 40px; /* Внутренний отступ, чтобы форма не прилипала к краям */
-    border-radius: 20px; /* Закругленные углы */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /*добавил тень для красоты */
-    margin-top: 20px;
-}
+@keyframes floatDown {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}/*# sourceMappingURL=style.css.map */
