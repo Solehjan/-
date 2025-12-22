@@ -99,16 +99,16 @@ ul {
 /*  HERO SECTION ПЕРВЫЙ ЭКРАН */
 .hero-section {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Скрываем края колонок, которые выезжают */
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
   min-height: calc(100vh - 80px);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 колонки Текст | Картинка */
+  grid-template-columns: 1fr 1fr; /* 2 колонки: Текст | Картинка */
   align-items: center;
   gap: 40px;
-  /* Анимация фона (из лабы 6) */
+  /* СТИЛИ ДЛЯ АНИМАЦИИ ФОНА (Лаба 6) */
   /* АДАПТИВ HERO */
 }
 .hero-section .animated-bg {
@@ -119,34 +119,52 @@ ul {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+  overflow: hidden; /* обрезаем все, что вылетает за пределы секции */
 }
-.hero-section .animated-bg .floating-item {
+.hero-section .animated-bg .bg-column {
   position: absolute;
-  opacity: 0.3;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 320px; /* Сделаем колонки покрупнее для ПК */
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.35; /* Подоберем прозрачность, чтобы не мешали тексту */
+  /* АДАПТИВ ДЛЯ МОБИЛЬНЫХ*/
+  /* ПОЗИЦИЯ НА ПК В ПРАВОМ УГЛУ*/
+  /* "Левая" из двух колонок чуть ближе к центру */
+  /* "Правая" колонка (в самом углу) */
 }
-.hero-section .animated-bg .item-1 {
-  width: 60px;
-  height: 60px;
-  top: 10%;
-  left: 5%;
-  animation: floatUp 5s infinite;
+@media (max-width: 900px) {
+  .hero-section .animated-bg .bg-column {
+    width: 150px;
+    opacity: 0.2;
+  }
+  .hero-section .animated-bg .bg-column.col-left {
+    right: auto;
+    left: -30px;
+    top: -10%;
+    animation-duration: 10s;
+  }
+  .hero-section .animated-bg .bg-column.col-right {
+    left: auto;
+    right: -30px;
+    top: -20%;
+    animation-duration: 12s;
+  }
 }
-.hero-section .animated-bg .item-2 {
-  width: 90px;
-  height: 90px;
-  bottom: 20%;
-  right: 10%;
-  animation: floatDown 7s infinite;
+.hero-section .animated-bg .bg-column.col-left {
+  top: -30%; /* Начальная позиция по вертикали */
+  right: 25%; /* Отступ справа */
+  /* Двигаем вверх-вниз (alternate) */
+  animation: scrollVertical 14s infinite alternate ease-in-out;
 }
-.hero-section .animated-bg .item-3 {
-  width: 40px;
-  height: 40px;
-  top: 40%;
-  left: 45%;
-  animation: floatUp 4s infinite;
+.hero-section .animated-bg .bg-column.col-right {
+  top: -50%; /* Начинаем выше, чтобы они двигались в разнобой */
+  right: -5%; /* Прижимаем к самому краю и чуть за него */
+  /* Двигаем в противофазе (alternate-reverse) */
+  animation: scrollVertical 18s infinite alternate-reverse ease-in-out;
+}
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2; /* Текст поверх фона */
 }
 .hero-section .hero-content h1 {
   font-size: 44px;
@@ -155,11 +173,20 @@ ul {
 .hero-section .hero-content p {
   margin-bottom: 30px;
   max-width: 450px;
+  /* Добавляем легкую подложку */
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 10px;
 }
 .hero-section .hero-image img {
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
   .hero-section {
@@ -366,5 +393,15 @@ ul {
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes scrollVertical {
+  0% {
+    /* Движение вверх + наклон */
+    transform: translateY(-80px) rotate(-15deg);
+  }
+  100% {
+    /* Движение вниз + тот же наклон */
+    transform: translateY(80px) rotate(-15deg);
   }
 }/*# sourceMappingURL=style.css.map */
