@@ -2,80 +2,138 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Семантическая разметка блоков</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Website - Лабораторная 7</title>
     <link rel="stylesheet" href="src/assets/styles/style.css">
 </head>
 <body>
 
     <header class="site-header">
-        <h1>Название Компании</h1>
-        <p>Слоган или описание деятельности</p>
-        <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Логотип" width="100">
+        <div class="header-container">
+            <div class="logo">IT WEBSITE</div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Медиа</a></li>
+                    <li><a href="#">Кейсы</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-contacts">
+                <a href="tel:+71111111111" class="phone">+7 (111) 111-11-11</a>
+            </div>
+        </div>
     </header>
 
-    <hr> <nav class="main-navigation">
-        <h3>Меню сайта</h3>
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
-
-    <hr>
-
     <main>
-        <section class="promo-section">
+        <section class="hero-section">
             <div class="animated-bg">
                 <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" class="floating-item item-1" alt="">
                 <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" class="floating-item item-2" alt="">
                 <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" class="floating-item item-3" alt="">
-             </div>
-            <h2>Добро пожаловать</h2>
-            <p>Это основной промо-блок сайта с описанием предложения.</p>
-            <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Промо изображение" width="300">
+            </div>
+
+            <div class="hero-content">
+                <h1>Разработка мобильных приложений и веб-сервисов</h1>
+                <p>Мы создаем мобильные приложения для iOS и Android, которые переносят ваш бизнес в смартфоны ваших клиентов.</p>
+                <button class="btn-primary">Получить консультацию</button>
+            </div>
+
+            <div class="hero-image">
+                 <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Мобильная разработка">
+            </div>
         </section>
 
-        <hr>
+        <section class="stages-section">
+            <h2>Этапы разработки</h2>
+            <div class="stages-grid">
+                <article class="stage-card">
+                    <div class="icon">Анализ</div> 
+                    <h3>Анализ</h3>
+                    <p>Мы пишем техническое задание, учитывая бизнес-процессы и технологии заказчика.</p>
+                </article>
+                <article class="stage-card">
+                    <div class="icon">Дизайн</div>
+                    <h3>Дизайн</h3>
+                    <p>Адаптируем фирменный стиль под гайдлайны платформ. Рисуем удобные интерфейсы.</p>
+                </article>
+                <article class="stage-card">
+                    <div class="icon">Dev</div>
+                    <h3>Разработка</h3>
+                    <p>Создаем расширяемую архитектуру, пишем чистый и стабильный код.</p>
+                </article>
+                <article class="stage-card">
+                    <div class="icon">Тест</div>
+                    <h3>Тестирование</h3>
+                    <p>Проводим функциональное тестирование и исправляем баги. Адаптируем под разные разрешения.</p>
+                </article>
+                <article class="stage-card">
+                    <div class="icon">Запуск</div>
+                    <h3>Запуск</h3>
+                    <p>Оформляем страницу приложения и публикуем его в магазинах App Store и Google Play.</p>
+                </article>
+                <article class="stage-card">
+                    <div class="icon">Саппорт</div>
+                    <h3>Поддержка</h3>
+                    <p>Следим за стабильностью, обновляем приложение под новые устройства и версии iOS и Android.</p>
+                </article>
+            </div>
+        </section>
 
-        <article class="news-article">
-            <h2>Последние новости</h2>
-            <p>Текст новости или статьи. Article используется для независимого контента.</p>
-            <ul>
-                <li>Пункт новости 1</li>
-                <li>Пункт новости 2</li>
-            </ul>
-        </article>
+        <section class="faq-section">
+            <h2>Частые вопросы</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>Сколько времени займет разработка?</summary>
+                    <p>Сроки зависят от требований. Средние проекты занимают до 3 месяцев.</p>
+                </details>
+                <details>
+                    <summary>Сколько стоит мобильное приложение?</summary>
+                    <p>Стоимость зависит от сложности функционала. Напишите нам для оценки.</p>
+                </details>
+                <details>
+                    <summary>Предоставляете ли вы гарантию?</summary>
+                    <p>Да, мы обеспечиваем техническую поддержку и гарантируем качество кода.</p>
+                </details>
+            </div>
+        </section>
 
-        <hr>
-
-        <aside class="sidebar-info">
-            <h3>Дополнительная информация</h3>
-            <p>Здесь могут быть рекламные баннеры или ссылки.</p>
-            <ul>
-                <li><a href="#">Ссылка 1</a></li>
-                <li><a href="#">Ссылка 2</a></li>
-            </ul>
-        </aside>
-
-        <hr>
-
-        <section class="feedback-form-section">
-            <h2>Свяжитесь с нами</h2>
-            <form action="#">
-                <label>Ваше имя: <input type="text" placeholder="Иван"></label><br><br>
-                <label>Email: <input type="email" placeholder="example@mail.ru"></label><br><br>
-                <button type="submit">Отправить</button>
-            </form>
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Обсудить проект</h2>
+                <form action="#">
+                    <div class="input-group">
+                        <label>Номер телефона</label>
+                        <input type="tel" placeholder="+7 (999) 000-00-00">
+                    </div>
+                    <div class="input-group">
+                        <label>Ваше имя</label>
+                        <input type="text" placeholder="Иван Иванов">
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="mail@mail.com">
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить заявку</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <hr>
-
     <footer class="site-footer">
-        <h3>Контакты</h3>
-        <p>Адрес: г. Тюмень, ул. Перекопская 15а</p>
-        <p>&copy; 2025 Все права защищены</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>IT WEBSITE</h4>
+                <p>Мы работаем по всему миру</p>
+            </div>
+            <div class="footer-col">
+                <p>itcompany@mail.com</p>
+                <p>г. Тюмень, ул. Перекопская 15а</p>
+            </div>
+        </div>
     </footer>
 
 </body>
