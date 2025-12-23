@@ -1,54 +1,148 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Семантическая разметка</title>
-    <link rel="stylesheet" href="/src/assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Website - Структура (Лаба 3)</title>
+    <link rel="stylesheet" href="src/assets/styles/style.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <h1>Мобильное приложение</h1>
-        <p>Лучший сервис для ваших задач</p>
-        <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Логотип" width="50">
-    </header>
+<header class="site-header">
+        <div class="logo">IT WEBSITE</div>
+        
+        <div class="burger-menu">☰</div> 
 
-    <hr> <nav class="main-menu">
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Функции</a></li>
-            <li><a href="#">Скачать</a></li>
-        </ul>
-    </nav>
+        <nav class="main-menu">
+            <ul>
+               </ul>
+        </nav>
+        </header>
+
+    <hr> <main>
+
+        <section class="hero-block">
+            <h1>Разработка мобильных приложений и веб-сервисов любой сложности</h1>
+            <p>Мы создаем мобильные приложения для iOS и Android, которые переносят ваш бизнес в смартфоны ваших клиентов</p>
+            
+            <div class="hero-form">
+                <h3>Оставьте свои контакты, и мы перезвоним вам в течение 30 минут</h3>
+                <form action="#">
+                    <label>Номер телефона: <input type="tel" placeholder="+7 (111) 111-11-11"></label>
+                    <label>Ваше имя: <input type="text" placeholder="Иван Иванов"></label>
+                    <button type="submit">Получить консультацию</button>
+                </form>
+            </div>
+            
+            <img src="src/assets/img/column-right.webp" alt="Скриншот приложения 1" width="100">
+            <img src="src/assets/img/column-left.webp" alt="Скриншот приложения 2" width="100">
+        </section>
+
+        <hr>
+
+        <section class="development-cycle-block">
+            <h2>Полный цикл разработки</h2>
+            <p>Мы используем проверенные технологии</p>
+            
+            <article class="tech-list">
+                <h3>Веб</h3>
+                <p>PHP / Javascript / Node.JS / Web Socket / Vue.js / Laravel</p>
+            </article>
+            <article class="tech-list">
+                <h3>Мобильная разработка</h3>
+                <p>Swift / Kotlin / Alamofire / Firebase / CoreData / Room</p>
+            </article>
+            
+            <ul>
+                <li>iOS разработка</li>
+                <li>Android разработка</li>
+                <li>Web разработка</li>
+                <li>UI/UX дизайн</li>
+                <li>Тестирование</li>
+                <li>Запуск</li>
+                <li>IT консалтинг</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="industries-block">
+            <h2>Разработали более 100 проектов в 15 отраслях</h2>
+            <ul>
+                <li>Социальные сети</li>
+                <li>Образование</li>
+                <li>Фитнес и спорт</li>
+                <li>Банки</li>
+                <li>Авто, транспорт</li>
+                <li>Медицина, здоровье</li>
+                <li>Строительство</li>
+                <li>Рестораны, доставка еды</li>
+                <li>Игровые проекты</li>
+                <li>Маркетплейсы</li>
+                <li>AR технологии</li>
+                <li>Стартапы</li>
+                <li>Сериалы / ТВ</li>
+                <li>Религия</li>
+                <li>Онлайн курсы</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="projects-block">
+            <h2>Проекты, которыми мы гордимся</h2>
+            <p>Наша компания по разработке ПО по-настоящему гордится замечательными клиентами, с которыми мы работали.</p>
+            
+            <nav class="projects-nav">
+                <ul>
+                    <li>Проект 1</li>
+                    <li>Проект 2</li>
+                    <li>Проект 3</li>
+                    <li>Проект 4</li>
+                </ul>
+            </nav>
 
     <hr>
 
-   <main>
-    <section class="hero-section">
-        <div class="hero-text">
-            <h2>Наш супер-продукт</h2>
-            <p>Используем CSS Grid для создания адаптивного и красивого макета, следуя требованиям Лабы 4.</p>
-            <button class="btn-submit">Узнать больше</button>
-        </div>
-        <div class="hero-image">
-            <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Изображение продукта" style="max-width: 100%;">
-        </div>
-    </section>
+    <main>
+        <section class="intro-block">
+            <h2>О нашем приложении</h2>
+            <p>Это приложение помогает решать повседневные задачи быстро и эффективно.</p>
+        </section>
 
-    <section>
-        <p>Здесь может быть любой другой контент для проверки скролла.</p>
-        <p>Например, много-много текста, чтобы проверить, что шапка и подвал остаются на месте.</p>
-        <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-    </section>
-</main>
+        <hr>
+
+        <article class="features-block">
+            <h3>Преимущества</h3>
+            <ul>
+                <li>Удобный интерфейс</li>
+                <li>Быстрая работа</li>
+                <li>Безопасность данных</li>
+            </ul>
+        </article>
+
+        <hr>
+
+        <section class="subscription-block">
+            <h3>Подписка на новости</h3>
+            <form action="#">
+                <label>Email: <input type="email" class="input-field"></label>
+                <button type="submit">Подписаться</button>
+            </form>
+        </section>
+    </main>
 
     <hr>
 
     <footer class="site-footer">
-        <h3>Контакты</h3>
-        <p>Телефон: +7 (999) 000-00-00</p>
-        <small>© 2025 Все права защищены</small>
+        <div class="footer-logo">IT WEBSITE</div>
+        <address>
+            <p>Контакты: +7 (778) 395 90 26</p>
+            <p>Email: mail@mail.com</p>
+            <p>Адрес: Г. Тюмень, ул. Перекопская 15а</p>
+        </address>
+        <button>Оставить заявку</button>
+        <p>&copy; Мы работаем по всему миру</p>
     </footer>
 
 </body>

@@ -1,257 +1,125 @@
 @import "fonts.css";
 
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
+* { box-sizing: border-box; }
 
-.test {
-    color: yellow !important;
-}
-
-.test {
-    color: red !important;
-}
-
-@import url('./fonts.css');
-
-
-/* Для всех параграфов (p)*/
-p {
-    font-size: 16px;
-    line-height: 26px;
-    color: #1F3F68;
-}
-
-/* Заголовок h1*/
-.title-main { 
-    font-size: 64px;
-    color: #1F3F68;
-}
-
-/* Заголовок h2*/
-.contact-title { 
-    font-weight: 500;
-    font-size: 44px;
-    text-align: center;
-}
-
-/* Заголовок h3*/ 
-.subtitle { 
-    font-size: 36px;
-    text-align: center;
-}
-
-/* Заголовки h4*/
-.small-title { 
-    font-size: 20px;
-    line-height: 30px;
-    color: #1F3F68;
-}
-
-/* Поля ввода*/
-.input-field { 
-    border: 1px solid #356EAD;
-    box-sizing: border-box;
-    border-radius: 10px;
-    opacity: 0.4;
-    display: block; /* Чтобы они были с новой строки */
-    margin-bottom: 20px; /* Отступ снизу */
-    width: 100%; /* Растянуть на всю ширину */
-    padding: 10px;
-}
-
-/* Кнопка отправки */
-.btn-submit { 
-    background: #5A98D0;
-    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
-    text-align: center;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    border: none; /* Убираем стандартную рамку */
-    padding: 15px 40px; /* Чтобы кнопка была большой */
-    cursor: pointer;
-}
-
-/* Стили для хлебных крошек */
-.breadcrumbs {
-    list-style: none; /* Убираем точки списка */
-    display: flex;    /* Выстраиваем в одну строку */
-    padding: 0;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #1F3F68;
-}
-
-.breadcrumbs li {
-    margin-right: 5px;
-}
-
-/* Добавляем "/" после каждого элемента, кроме последнего */
-.breadcrumbs li:not(:last-child)::after {
-    content: "/";
-    margin-left: 5px;
-    color: #ccc;
-}
-
-.breadcrumbs a {
-    text-decoration: none;
-    color: #1F3F68;
-    font-weight: bold;
-}
-
-/* Фон для формы */
-.form-wrapper {
-    background-image: url('../img/images\ \(1\).jpg'); 
-    
-    background-size: cover;  /* Чтобы картинка покрывала весь блок */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    padding: 40px; /* Внутренний отступ, чтобы форма не прилипала к краям */
-    border-radius: 20px; /* Закругленные углы */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /*добавил тень для красоты */
-    margin-top: 20px;
-}
-
-
-
-
-
-/* Стили для ЛАБЫ 4: Закрепление Header/Footer */
-/*body высотой во весь экран и добавляем отступы */
 body {
-    min-height: 100vh;
-    margin: 0; 
-    padding-top: 60px; /* Отступ сверху (высота header) */
-    padding-bottom: 50px; /* Отступ снизу (высота footer) */
+    margin: 0;
+    font-family: sans-serif;
+    color: #1F3F68;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
-/*Закрепляем Шапку*/
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+h1, h2, h3 { margin-top: 0; }
+button { cursor: pointer; }
+
+main { flex: 1; padding-top: 80px; }
+section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+hr { border: 0; border-top: 1px solid #eee; margin: 0; }
+
+/* HEADER */
 .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white; 
-    z-index: 1000; 
-    height: 60px; 
-    
-    /* Стили Flexbox для десктопной версии */
-    display: flex;
-    justify-content: space-between; /* Элементы по краям */
-    align-items: center; 
-    padding: 0 20px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+    background-color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.05); z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
 }
+.site-header .logo { font-weight: bold; font-size: 24px; color: #1F3F68; }
+.main-menu ul { display: flex; gap: 30px; }
+.main-menu a:hover { color: #5A98D0; }
+.contacts { display: flex; gap: 20px; font-weight: bold; font-size: 14px; }
 
-/*Прижимаем Подвал*/
-.site-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    height: 50px; 
-    
-    /* Стили Flexbox для центрального выравнивания */
-    display: flex;
-    justify-content: center;
+/* Бургер-меню */
+.burger-menu { display: none; font-size: 24px; cursor: pointer; }
+
+/*ПЕРВЫЙ ЭКРАН HERO*/
+.hero-block {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* ПК 2 колонки */
+    gap: 40px;
     align-items: center;
 }
-
-/* Стили для первого экрана */
-.hero-section {
-    display: grid; /* Включаем режим Grid */
-    /* Создаем две колонки: одна занимает 1 часть, вторая 1 часть */
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; /* Расстояние между колонками */
-    min-height: calc(100vh - 110px); /* Высота равна высоте экрана минус высота шапки и подвала */
-    align-items: center; /* Выравнивание по центру вертикально */
-    padding: 20px;
+.hero-block h1 { font-size: 44px; line-height: 1.2; margin-bottom: 20px; grid-column: 1; }
+.hero-block p { opacity: 0.7; margin-bottom: 30px; max-width: 400px; grid-column: 1; }
+.hero-block .hero-form {
+    grid-column: 1; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px; border-radius: 10px;
 }
-
-.hero-text {
-    /* Дополнительные стили для текста */
-    padding: 20px;
+.hero-form form { display: flex; flex-direction: column; gap: 15px; }
+.hero-form input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+.hero-form button { 
+    background: #5A98D0; color: white; border: none; padding: 15px; border-radius: 5px; 
+    font-weight: bold; text-transform: uppercase;
 }
+.hero-block img { grid-column: 2; max-width: 100%; justify-self: center; }
 
-
-
-/* ЛАБА 5. АДАПТИВНОСТЬ (Media Queries)  */
-
-/*1. Планшеты (меньше 768px) */
-@media (max-width: 768px) {
-    
-    /* 1.header Уменьшаем отступы */
-    .site-header {
-        height: auto; /* Высота теперь подстраивается под содержимое */
-        padding: 10px 20px;
-
-        body {
-        background-color: pink;
-    }
-    }
-
-    /* 2. Первый экран Hero: Выстраиваем в одну колонку */
-    .hero-section {
-        grid-template-columns: 1fr; /* Было 1fr 1fr, стала 1 колонка */
-        text-align: center; /* Центрируем текст */
-        min-height: auto; /* Убираем жесткую высоту */
-        padding-top: 100px; /* Отступ сверху, чтобы не наезжало на хедер */
-        gap: 20px;
-    }
-
-    /* Меняем порядок: Картинка сверху, текст снизу*/
-    .hero-image {
-        order: -1; /* Перемещает блок вверх */
-        margin-bottom: 20px;
-    }
-    
-    .hero-text h2 {
-        font-size: 32px; /* Уменьшаем шрифт заголовка */
-    }
+/*ВТОРОЙ ЭКРАН CYCLE*/
+.development-cycle-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* ПК 2 колонки */
+    gap: 40px; align-items: start;
 }
+.tech-list h3 { font-size: 18px; margin-bottom: 10px; }
+.tech-list p { margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+.development-cycle-block ul li { padding: 10px 0; border-bottom: 1px solid #eee; font-weight: bold; }
 
-/*Breakpoint 2. Мобильные телефоны (меньше 480px) */
-@media (max-width: 480px) {
 
-    /* 1. Header. Элементы друг под другом */
-    .site-header {
-        flex-direction: column; /* Вертикальное расположение */
-        align-items: center;
-    }
-    
-    /* Скрываем меню на совсем маленьких экранах (или делаем вертикальным) */
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
+/*FOOTER*/
+.site-footer {
+    background-color: #1F3F68; color: #fff; padding: 40px 20px; text-align: center; margin-top: auto;
+}
+.site-footer .footer-logo { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
 
-    /* 2. Футер: Текст поменьше */
-    .site-footer {
-        font-size: 12px;
-        height: auto;
-        padding: 15px;
-        flex-direction: column;
+
+/*  АДАПТИВНОСТЬ MEDIA QUERIES */
+
+/* 1. TABLET Планшеты < 900px */
+@media (max-width: 900px) {
+    .main-menu, .contacts { display: none; } /* Прячем ссылки и телефоны */
+    .burger-menu { display: block; } /* Показываем иконку меню */
+    .site-header { padding: 0 20px; } /* Уменьшаем отступы */
+
+    /* Hero 1 колонка картинка снизу */
+    .hero-block {
+        grid-template-columns: 1fr; /* Одна колонка */
         text-align: center;
+        gap: 30px;
+        padding-top: 40px;
+        height: auto; /* Убираем фикс высоту */
+    }
+    
+    .hero-block h1, .hero-block p, .hero-block .hero-form { 
+        grid-column: 1; /* Всё в одну колонку */
+        justify-self: center; /* По центру */
+    }
+    .hero-block h1 { font-size: 32px; }
+    .hero-block p { margin: 0 auto 30px auto; }
+    
+    .hero-block img {
+        grid-column: 1; /* Картинка тоже в 1 колонку */
+        order: -1; 
+        width: 60%;
     }
 
-    /* 3. Первый экран: Еще меньше шрифт */
-    .hero-text h2 {
-        font-size: 24px;
+    /* Второй экран 1 колонка */
+    .development-cycle-block {
+        grid-template-columns: 1fr;
     }
+}
+
+/* 2. MOBILE (Телефоны < 480px) */
+@media (max-width: 480px) {
+    .hero-block { padding: 30px 15px; }
+    .hero-block h1 { font-size: 26px; }
+    .hero-block img { width: 80%; }
     
-    .hero-text p {
-        font-size: 14px;
-    }
+    /* Форма на весь экран */
+    .hero-block .hero-form { width: 100%; box-shadow: none; border: 1px solid #eee; }
     
-    .btn-submit {
-        width: 100%; /* Кнопка на всю ширину */
-    }
+    /* Footer элементы друг под другом */
+    .site-footer { padding: 30px 15px; }
 }
