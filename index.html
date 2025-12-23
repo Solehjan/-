@@ -2,74 +2,235 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Семантическая разметка блоков</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Website - Структура (Лаба 3)</title>
+    <link rel="stylesheet" href="src/assets/styles/style.css">
 </head>
 <body>
 
     <header class="site-header">
-        <h1>Название Компании</h1>
-        <p>Слоган или описание деятельности</p>
-        <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Логотип" width="100">
+        <div class="logo">IT WEBSITE</div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Медиа</a></li>
+                <li><a href="#">Кейсы</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="contacts">
+            <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+            <a href="mailto:itcompany@mail.com">itcompany@mail.com</a>
+        </div>
     </header>
 
-    <hr> <nav class="main-navigation">
-        <h3>Меню сайта</h3>
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
+    <hr> <main>
 
-    <hr>
-
-    <main>
-        <section class="promo-section">
-            <h2>Добро пожаловать</h2>
-            <p>Это основной промо-блок сайта с описанием предложения.</p>
-            <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Промо изображение" width="300">
+        <section class="hero-block">
+            <h1>Разработка мобильных приложений и веб-сервисов любой сложности</h1>
+            <p>Мы создаем мобильные приложения для iOS и Android, которые переносят ваш бизнес в смартфоны ваших клиентов</p>
+            
+            <div class="hero-form">
+                <h3>Оставьте свои контакты, и мы перезвоним вам в течение 30 минут</h3>
+                <form action="#">
+                    <label>Номер телефона: <input type="tel" placeholder="+7 (111) 111-11-11"></label>
+                    <label>Ваше имя: <input type="text" placeholder="Иван Иванов"></label>
+                    <button type="submit">Получить консультацию</button>
+                </form>
+            </div>
+            
+            <img src="src/assets/img/column-right.webp" alt="Скриншот приложения 1" width="100">
+            <img src="src/assets/img/column-left.webp" alt="Скриншот приложения 2" width="100">
         </section>
 
         <hr>
 
-        <article class="news-article">
-            <h2>Последние новости</h2>
-            <p>Текст новости или статьи. Article используется для независимого контента.</p>
+        <section class="development-cycle-block">
+            <h2>Полный цикл разработки</h2>
+            <p>Мы используем проверенные технологии</p>
+            
+            <article class="tech-list">
+                <h3>Веб</h3>
+                <p>PHP / Javascript / Node.JS / Web Socket / Vue.js / Laravel</p>
+            </article>
+            <article class="tech-list">
+                <h3>Мобильная разработка</h3>
+                <p>Swift / Kotlin / Alamofire / Firebase / CoreData / Room</p>
+            </article>
+            
             <ul>
-                <li>Пункт новости 1</li>
-                <li>Пункт новости 2</li>
+                <li>iOS разработка</li>
+                <li>Android разработка</li>
+                <li>Web разработка</li>
+                <li>UI/UX дизайн</li>
+                <li>Тестирование</li>
+                <li>Запуск</li>
+                <li>IT консалтинг</li>
             </ul>
-        </article>
+        </section>
 
         <hr>
 
-        <aside class="sidebar-info">
-            <h3>Дополнительная информация</h3>
-            <p>Здесь могут быть рекламные баннеры или ссылки.</p>
+        <section class="industries-block">
+            <h2>Разработали более 100 проектов в 15 отраслях</h2>
             <ul>
-                <li><a href="#">Ссылка 1</a></li>
-                <li><a href="#">Ссылка 2</a></li>
+                <li>Социальные сети</li>
+                <li>Образование</li>
+                <li>Фитнес и спорт</li>
+                <li>Банки</li>
+                <li>Авто, транспорт</li>
+                <li>Медицина, здоровье</li>
+                <li>Строительство</li>
+                <li>Рестораны, доставка еды</li>
+                <li>Игровые проекты</li>
+                <li>Маркетплейсы</li>
+                <li>AR технологии</li>
+                <li>Стартапы</li>
+                <li>Сериалы / ТВ</li>
+                <li>Религия</li>
+                <li>Онлайн курсы</li>
             </ul>
-        </aside>
+        </section>
 
         <hr>
 
-        <section class="feedback-form-section">
-            <h2>Свяжитесь с нами</h2>
+        <section class="projects-block">
+            <h2>Проекты, которыми мы гордимся</h2>
+            <p>Наша компания по разработке ПО по-настоящему гордится замечательными клиентами, с которыми мы работали.</p>
+            
+            <nav class="projects-nav">
+                <ul>
+                    <li>Проект 1</li>
+                    <li>Проект 2</li>
+                    <li>Проект 3</li>
+                    <li>Проект 4</li>
+                </ul>
+            </nav>
+
+            <article class="project-card">
+                <h3>I-teka</h3>
+                <p>Приложение предназначено для поиска лекарств по наличию в аптеках города.</p>
+                <p><strong>Бизнес-анализ / iOS / Android / QA / UI/UX Дизайн</strong></p>
+                <ul>
+                    <li>Локация: Казахстан</li>
+                    <li>Отрасль: Медицина</li>
+                    <li>Рост: 400%</li>
+                    <li>Активные пользователи: + 200 000</li>
+                </ul>
+                <div class="store-buttons">
+                    <button>App Store</button>
+                    <button>Google Play</button>
+                </div>
+                <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Телефоны I-teka" width="200">
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="discuss-banner-block">
+            <h2>Давайте обсудим ваш проект</h2>
+            <p>Давайте выясним, как создать эффективное приложение, его стоимость и сроки разработки.</p>
+            
             <form action="#">
-                <label>Ваше имя: <input type="text" placeholder="Иван"></label><br><br>
-                <label>Email: <input type="email" placeholder="example@mail.ru"></label><br><br>
-                <button type="submit">Отправить</button>
+                <label>Номер телефона: <input type="tel" placeholder="+7 (999) ..."></label>
+                <label>Ваше имя: <input type="text" placeholder="Иван Иванов"></label>
+                <button type="submit">Обсудить проект</button>
             </form>
         </section>
+
+        <hr>
+
+        <section class="stages-block">
+            <h2>Этапы разработки приложения</h2>
+            <div class="stages-list">
+                <article>
+                    <h3>1. Анализ</h3>
+                    <p>Мы пишем техническое задание, учитывая бизнес-процессы заказчика...</p>
+                </article>
+                <article>
+                    <h3>2. Дизайн</h3>
+                    <p>Адаптируем фирменный стиль под гайдлайны платформ...</p>
+                </article>
+                <article>
+                    <h3>3. Разработка</h3>
+                    <p>Создаем расширяемую архитектуру, пишем чистый код...</p>
+                </article>
+                <article>
+                    <h3>4. Тестирование</h3>
+                    <p>Проводим функциональное тестирование и исправляем баги...</p>
+                </article>
+                <article>
+                    <h3>5. Запуск</h3>
+                    <p>Оформляем страницу приложения и публикуем его...</p>
+                </article>
+                <article>
+                    <h3>6. Поддержка</h3>
+                    <p>Следим за стабильностью приложения...</p>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="team-block">
+            <h2>Наша команда</h2>
+            <p>Thousand — это компания полного цикла...</p>
+            <ul>
+                <li><strong>28</strong> сотрудников</li>
+                <li><strong>+100</strong> проектов</li>
+                <li><strong>7 лет</strong> в IT сфере</li>
+            </ul>
+            <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Фото команды" width="300">
+        </section>
+
+        <hr>
+
+        <section class="book-block">
+            <h2>Получите книгу бесплатно, оставив контакты</h2>
+            <form action="#">
+                <label>Ваш email: <input type="email" placeholder="mail@mail.com"></label>
+                <label>Ваше имя: <input type="text"></label>
+                <button type="submit">Отправить мне книгу</button>
+            </form>
+            <img src="src/assets/img/photo_2025-12-11_08-32-43.jpg" alt="Обложка книги" width="100">
+        </section>
+
+        <hr>
+
+        <section class="faq-block">
+            <h2>Частые вопросы</h2>
+            <details>
+                <summary>Сколько времени займет разработка?</summary>
+                <p>Средние проекты до 3 месяцев. Крупные — около 4-6 месяцев.</p>
+            </details>
+            <details>
+                <summary>Сколько стоит мобильное приложение?</summary>
+                <p>Стоимость зависит от сложности функционала.</p>
+            </details>
+            <details>
+                <summary>Вы предоставляете гарантию?</summary>
+                <p>Да, конечно. Мы предоставляем техподдержку.</p>
+            </details>
+            <details>
+                <summary>Я не скажу свою идею, вы гарантируете конфиденциальность?</summary>
+                <p>Да, мы подписываем NDA.</p>
+            </details>
+        </section>
+
     </main>
 
     <hr>
 
     <footer class="site-footer">
-        <h3>Контакты</h3>
-        <p>Адрес: г. Тюмень, ул. Перекопская 15а</p>
-        <p>&copy; 2025 Все права защищены</p>
+        <div class="footer-logo">IT WEBSITE</div>
+        <address>
+            <p>Контакты: +7 (778) 395 90 26</p>
+            <p>Email: mail@mail.com</p>
+            <p>Адрес: Г. Тюмень, ул. Перекопская 15а</p>
+        </address>
+        <button>Оставить заявку</button>
+        <p>&copy; Мы работаем по всему миру</p>
     </footer>
 
 </body>
