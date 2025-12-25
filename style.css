@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Обертка игры */
+.tic-tac-toe-wrapper {
+    max-width: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 60px auto;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.tic-tac-toe-inner {
+    width: 100%;
+    max-width: 400px;
+}
+    
+/* Сетка игры */
+.tic-tac-toe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 5px;
+    border: 2px solid #333;
+    background: #333; /* Цвет границ */
+    aspect-ratio: 1;
+}
+
+/* Ячейка */
+.tic-tac-toe__ceil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    cursor: pointer;
+    font-size: 4em;
+    font-weight: bold;
+    user-select: none;
+}
+
+.tic-tac-toe__ceil:hover {
+    background: #f0f0f0;
+}
+
+/* Текущий ход */
+.tic-tac-toe__current-move {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Кнопка */
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #0056b3;
+}
