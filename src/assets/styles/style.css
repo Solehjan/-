@@ -1,11 +1,125 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-
-.test {
-    color: yellow !important;
+/* --- 1. ГЛОБАЛЬНЫЕ СТИЛИ (Global) --- */
+html {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
-.test {
-    color: red !important;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* --- 2. ШРИФТЫ (Fonts) --- */
+@font-face {
+    font-family: "Inter";
+    src: local('Inter'), local('Inter-Bold'), local('Inter Bold'),
+         url("/static/fonts/Inter-Bold.ttf") format("truetype"),
+         url("/static/fonts/Inter-Bold.woff2") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local('Inter'), local('Inter-Medium'), local('Inter Medium'),
+         url("/static/fonts/Inter-Medium.ttf") format("truetype"),
+         url("/static/fonts/Inter-Medium.woff2") format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local('Inter'), local('Inter-Regular'), local('Inter Regular'),
+         url("/static/fonts/Inter-Regular.ttf") format("truetype"),
+         url("/static/fonts/Inter-Regular.woff2") format("woff");
+    font-weight: 400;
+}
+
+/* --- 3. УТИЛИТЫ (Utils) --- */
+.bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.medium {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+/* --- 4. СТИЛИ ИГРЫ (Snake) --- */
+/* Темный фон для всей страницы */
+* {
+    margin: 0;
+    padding: 0;
+    /* Если фон белый, значит этот стиль не работает. */
+    /* Убедись, что этот код попал в файл! */
+    background: #2e353d; 
+}
+
+/* Кнопки меню */
+.menuButton {
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background: #007b32; /* Зеленый цвет кнопок */
+    text-align: center;
+    cursor: pointer;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+.menuButton:hover {
+    background: #009641;
+}
+
+/* Счетчик очков */
+.schetvalue {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Игровое поле */
+#game {
+    border-collapse: collapse;
+    margin: 2% auto 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+}
+
+/* Ячейка сетки (Важно! Без этого сетки не видно) */
+td.cell {
+    width: 20px;
+    height: 20px;
+    border: 1px dotted #eee; /* Границы ячеек */
+    border-collapse: collapse;
+}
+
+/* Еда (Зеленая) */
+.food {
+    background: #00d021 !important;
+}
+
+/* Тело змейки (Серое) */
+.snakeBody {
+    background: #e5e5e5 !important;
+}
+
+/* Голова змейки (Красная) */
+.snakeHead {
+    background: #9b0013 !important;
+}
+
+/* Отключенная кнопка */
+.disabled {
+    background: #7c7c7c;
+    cursor: default;
+}
+
+.disabled:hover {
+    background: #7c7c7c;
 }
